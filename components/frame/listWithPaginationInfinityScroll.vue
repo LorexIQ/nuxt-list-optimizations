@@ -27,7 +27,7 @@ if (!dataList.value.length) await fetchTableData();
 async function fetchTableData(): void {
   isFetch.value = true;
 
-  useFetch(`/api/data?limit=${limit}&offset=${dataList.value.length}`)
+  useFetch(`/api-add/data?limit=${limit}&offset=${dataList.value.length}`)
       .then(res => res.data.value)
       .then(res => {
         counts.value = res.count;

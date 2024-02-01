@@ -6,7 +6,7 @@ interface Emits {
 const emit = defineEmits<Emits>();
 
 const startRender = Date.now();
-const dataList = await useFetch('/api/data?limit=1000').then(res => res.data.value.data);
+const dataList = await useFetch('/api-add/data?limit=1000').then(res => res.data.value.data);
 const columns = Object.keys(dataList[0]);
 
 onMounted(() => emit('timeLoading', Date.now() - startRender));

@@ -7,7 +7,7 @@ const emit = defineEmits<Emits>();
 
 let startRender = Date.now();
 const isFetch = ref(false);
-const { data: dataList, count: counts } = await useFetch(`/api/data`).then(res => res.data.value);
+const { data: dataList, count: counts } = await useFetch(`/api-add/data`).then(res => res.data.value);
 const columns = Object.keys(dataList[0]);
 
 const currentScroll = ref(0);
