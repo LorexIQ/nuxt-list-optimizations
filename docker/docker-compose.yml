@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  client:
+    container_name: nuxt-list-optimizations-client
+    image: nuxt-list-optimizations-client
+    restart: always
+    build:
+      context: ../.
+      dockerfile: ./docker/Dockerfile
+    env_file:
+      - .env
+    environment:
+      - PORT=$CLIENT_PORT
+    ports:
+      - ${CLIENT_PORT:-3000}:${CLIENT_PORT:-3000}
